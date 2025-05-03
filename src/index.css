@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme{
+    --font-sans: Inter, sans-serif;
+    --font-heading: Poppins, sans-serif;
+    --color-primary: #ff5b31;
+    --color-background: #0e0e0e;
+    --color-card: #1a1a1a;
+    --color-muted: #9ca3af;
+    --color-text-primary: #FFFFFF;
+    --color-text-muted: #A3A3A3;
+    --color-accent: #F97316;
+    --color-success: #FACC15;
+    --color-warning: #F97316;
+    --color-info: #F97316;
+    --color-border: #262626;
+}

@@ -3,7 +3,7 @@ import Header from "./Header";
 
 const Body = () => {
   return (
-    <div>
+    <div className="bg-black/100 text-white min-h-[100dvh] font-sans">
       <Header />
       <Outlet />
     </div>

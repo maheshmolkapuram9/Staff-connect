@@ -62,3 +62,8 @@ staff-connect/
 - Integrated Tailwind CSS for utility-first styling
 - set up react router and defined routes set up for different pages
   -- (Dashboard, staff directory, It Requests, Tickets, To Do List, Not Found)
+
+- header has been built
+  -- Logo and App name
+  -- navigation Menu (Dashboard, staff directory, It Requests, Tickets, To Do List)
+  -- User Profile Menu, On hover, a dropdown appears with a user name Sign Out button.
