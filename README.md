@@ -51,7 +51,6 @@ staff-connect/
 │ ├── App.tsx # Main component handling routes
 │ ├── main.tsx # Entry point for the React application
 │ └── index.css # Global styles and Tailwind base config
-├── tailwind.config.js # Tailwind CSS configuration
 ├── vite.config.ts # Vite configuration
 └── README.md
 
@@ -67,3 +66,9 @@ staff-connect/
   -- Logo and App name
   -- navigation Menu (Dashboard, staff directory, It Requests, Tickets, To Do List)
   -- User Profile Menu, On hover, a dropdown appears with a user name Sign Out button.
+
+- Dashboard has been built
+  -- Dashboard banner (background image & welcome text with overview description)
+  -- Quick summary cards (Tickets, Pending Tasks, Updates.)
+  -- shortcult buttons to navigate to (Submit IT Request, Add new task, View Staff Directory)
+  -- Entire Dashboard including header is responsive for all screens (Mobile, Tablet, PC)

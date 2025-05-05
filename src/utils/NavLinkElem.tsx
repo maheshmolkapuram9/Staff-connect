@@ -6,7 +6,9 @@ const NavLinkElem = ({ path, name }: NavItemProps) => {
       to={path}
       className={({ isActive }) =>
         `px-5 py-3 ${
-          isActive ? "text-text-primary" : "text-text-muted"
+          isActive
+            ? "text-text-primary"
+            : "text-text-primary xl:text-text-muted"
         } hover:text-text-primary`
       }
     >

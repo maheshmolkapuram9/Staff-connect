@@ -5,7 +5,12 @@ export interface NavItemProps {
   name: string;
 }
 
-const Navbar = () => {
+interface Navbarprops {
+  showNavOnMobile: boolean;
+  handleMenuToggle: () => void;
+}
+
+const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
   const navLinksArr: NavItemProps[] = [
     { path: "/", name: "Dashboard" },
     { path: "/staffDirectory", name: "Staff Directory" },
@@ -13,9 +18,23 @@ const Navbar = () => {
     { path: "/tickets", name: "Tickets" },
     { path: "/toDoList", name: "To Do List" },
   ];
+
   return (
-    <nav>
-      <ul className="flex text-xl text-text-muted">
+    <nav
+      className={
+        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent transition-transform duration-500 ease-in-out " +
+        (showNavOnMobile
+          ? "translate-x-0"
+          : " -translate-x-full xl:translate-none")
+      }
+    >
+      <div
+        onClick={handleMenuToggle}
+        className="absolute right-4 top-4 bg-background rounded-full w-10 h-10 flex justify-center items-center hover:scale-110 cursor-pointer transition xl:hidden"
+      >
+        <p className="p-2 text-primary">X</p>
+      </div>
+      <ul className="flex flex-col xl:flex-row text-lg 2xl:text-xl text-text-muted">
         {navLinksArr.map((eachLink) => (
           <NavLinkElem
             key={eachLink.path}

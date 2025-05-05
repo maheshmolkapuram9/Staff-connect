@@ -3,9 +3,11 @@ import Header from "./Header";
 
 const Body = () => {
   return (
-    <div className="bg-black/100 text-white min-h-[100dvh] font-sans">
+    <div className="bg-black/100 bg-fixed text-white min-h-[100dvh] font-sans">
       <Header />
-      <Outlet />
+      <div className="max-w-[90%] mx-auto py-6 md:py-10">
+        <Outlet />
+      </div>
     </div>
   );
 };
