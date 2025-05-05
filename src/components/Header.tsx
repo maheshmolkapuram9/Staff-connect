@@ -10,7 +10,7 @@ const Header = () => {
     setShowNavOnMobile(!showNavOnMobile);
   };
   return (
-    <header className="relative flex justify-between shadow-2xl items-center bg-background px-4 md:px-10 2xl:px-36 py-4 md:py-10 font-heading">
+    <header className="relative flex justify-between shadow-2xl items-center bg-background px-4 md:px-10 2xl:px-36 py-4 2xl:py-6 font-heading">
       <Link to="/">
         <div className="cursor-pointer flex gap-4">
           <img
@@ -35,7 +35,7 @@ const Header = () => {
         showNavOnMobile={showNavOnMobile}
         handleMenuToggle={handleMenuToggle}
       />
-      <div className="relative group bg-primary rounded-full w-[30px] h-[30px] md:w-[60px] md:h-[60px] flex justify-center items-center">
+      <div className="relative group bg-primary rounded-full w-[30px] h-[30px] md:w-[45px] md:h-[45px] flex justify-center items-center cursor-pointer">
         <p className="md:text-3xl font-bold">M</p>
         <div className="hidden z-10 group-hover:block absolute text-center top-[calc(100%-75px)] pt-20 pb-10 right-0">
           <div className="bg-text-primary text-background p-2 md:p-6 rounded-xl flex flex-col">

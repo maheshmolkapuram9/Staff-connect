@@ -22,9 +22,9 @@ const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
   return (
     <nav
       className={
-        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent transition-transform duration-500 ease-in-out " +
+        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent   " +
         (showNavOnMobile
-          ? "translate-x-0"
+          ? "transition-transform duration-500 ease-in-out translate-x-0"
           : " -translate-x-full xl:translate-none")
       }
     >

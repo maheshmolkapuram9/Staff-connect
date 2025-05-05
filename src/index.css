@@ -15,4 +15,8 @@
     --color-warning: #F97316;
     --color-info: #F97316;
     --color-border: #262626;
+    --color-active-background: #a3742e;
+    --color-inactive-background: #4B4B4B;
+    --color-resolved-background: #265218;
+    --color-table-border: #2C2C2C;
 }

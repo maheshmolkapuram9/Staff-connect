@@ -72,3 +72,8 @@ staff-connect/
   -- Quick summary cards (Tickets, Pending Tasks, Updates.)
   -- shortcult buttons to navigate to (Submit IT Request, Add new task, View Staff Directory)
   -- Entire Dashboard including header is responsive for all screens (Mobile, Tablet, PC)
+
+- Responsive and Reusuable Table is built with hard coded data (Staff Directory)
+  -- Reusuable table
+  -- Reusuable table Row
+  -- Reusable table Cell
