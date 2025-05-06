@@ -77,3 +77,9 @@ staff-connect/
   -- Reusuable table
   -- Reusuable table Row
   -- Reusable table Cell
+
+- It Requests form has been built
+  -- Reusuable Select dropdown element, TextArea, File input accepting only .pdf or .doc/.docx files
+  -- Implemented accessibility features: Proper labeling, keyboard navigation, and live region updates
+  -- Provided user feedback on submission status
+  -- confirmation pop-up of succesful sumbission Provided user feedback on submission status

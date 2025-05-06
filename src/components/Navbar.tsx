@@ -1,3 +1,4 @@
+import ClosingCross from "../utils/closingCross";
 import NavLinkElem from "../utils/NavLinkElem";
 
 export interface NavItemProps {
@@ -22,18 +23,14 @@ const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
   return (
     <nav
       className={
-        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent   " +
-        (showNavOnMobile
-          ? "transition-transform duration-500 ease-in-out translate-x-0"
-          : " -translate-x-full xl:translate-none")
+        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent transition-transform duration-500 ease-in-out xl:transition-none xl:translate-none" +
+        (showNavOnMobile ? " translate-x-0" : " -translate-x-full")
       }
     >
-      <div
+      <ClosingCross
         onClick={handleMenuToggle}
-        className="absolute right-4 top-4 bg-background rounded-full w-10 h-10 flex justify-center items-center hover:scale-110 cursor-pointer transition xl:hidden"
-      >
-        <p className="p-2 text-primary">X</p>
-      </div>
+        className="bg-text-primary xl:hidden"
+      />
       <ul className="flex flex-col xl:flex-row text-lg 2xl:text-xl text-text-muted">
         {navLinksArr.map((eachLink) => (
           <NavLinkElem
