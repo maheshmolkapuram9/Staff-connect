@@ -1,4 +1,4 @@
-import TableCell from "./TableCell";
+import TableCell from "../table/TableCell";
 
 interface TableRowProps {
   columnsList: { text: string; className?: string }[];

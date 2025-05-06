@@ -1,14 +1,13 @@
 import StaffTable from "../components/StaffTable";
-import PageHeading from "../utils/PageHeading";
+import TableWrapper from "../utils/table/TableWrapper";
 
 const StaffDirectory = () => {
   return (
-    <div className="flex flex-col items-center">
-      <div>
-        <PageHeading title="List of Staff" />
-        <StaffTable />
-      </div>
-    </div>
+    <TableWrapper
+      pageHeadingText="List of Staff"
+      tableComponent={<StaffTable />}
+      className2="w-full md:w-auto"
+    />
   );
 };
 

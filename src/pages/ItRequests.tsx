@@ -57,10 +57,12 @@ const ItRequests = () => {
           className="pb-8"
         />
         <TextArea
+          id="Description"
           label="Description"
           placeholder="Enter a description"
           ref={descriptionRef}
           className="pb-8"
+          isRequired={true}
         />
         <InputFileElement
           label="File Attachment"
@@ -80,6 +82,7 @@ const ItRequests = () => {
       </form>
       {showConfirmation && (
         <ConfirmationPopUp
+          messageText="Successfully Updated"
           onClick={() => setShowConfirmation(false)}
           redirectButtonText="Go to Tickets"
           linkPath="/tickets"

@@ -83,3 +83,10 @@ staff-connect/
   -- Implemented accessibility features: Proper labeling, keyboard navigation, and live region updates
   -- Provided user feedback on submission status
   -- confirmation pop-up of succesful sumbission Provided user feedback on submission status
+
+- To-Do List Page has been built
+  -- Reusuable Add To-do form has been built [title(required), status (optional)]
+  -- Responsive To-Do table is built (Title, Status, Edit, Delete)
+  -- can Edit a To-Do
+  -- can Delete a To-do
+  -- pop-ups with information gives best User experience

@@ -1,11 +1,20 @@
 interface DropDownProps {
   label: string;
   options: { value: string; text: string }[];
-  ref: React.RefObject<HTMLSelectElement | null>;
   className?: string;
+  isRequired?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const DropDown = ({ label, options, ref, className }: DropDownProps) => {
+const DropDown = ({
+  label,
+  options,
+  className,
+  isRequired,
+  value,
+  onChange,
+}: DropDownProps) => {
   return (
     <div className={"flex flex-col " + className}>
       <label htmlFor={label} className="pb-2">
@@ -14,11 +23,12 @@ const DropDown = ({ label, options, ref, className }: DropDownProps) => {
 
       <div aria-live="polite">
         <select
+          required={isRequired}
           name={label}
           id={label}
-          ref={ref}
-          defaultValue=""
-          className="border border-table-border px-4 py-2 pr-10 rounded leading-tight focus:outline-none focus:border-primary"
+          value={value}
+          onChange={onChange}
+          className="w-full border border-table-border px-4 py-2 pr-10 rounded leading-tight focus:outline-none focus:border-primary"
         >
           {options.map(({ value, text }) => {
             return (

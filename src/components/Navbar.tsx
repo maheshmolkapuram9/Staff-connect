@@ -1,17 +1,23 @@
-import ClosingCross from "../utils/closingCross";
+import ClosingCross from "../utils/ClosingCross";
 import NavLinkElem from "../utils/NavLinkElem";
 
 export interface NavItemProps {
   path: string;
   name: string;
+  onClick?: () => void;
 }
 
 interface Navbarprops {
   showNavOnMobile: boolean;
   handleMenuToggle: () => void;
+  className?: string;
 }
 
-const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
+const Navbar = ({
+  showNavOnMobile,
+  handleMenuToggle,
+  className,
+}: Navbarprops) => {
   const navLinksArr: NavItemProps[] = [
     { path: "/", name: "Dashboard" },
     { path: "/staffDirectory", name: "Staff Directory" },
@@ -23,8 +29,9 @@ const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
   return (
     <nav
       className={
-        "fixed xl:static z-10 h-[100%] xl:h-auto w-[300px] xl:w-auto left-0 top-0 bg-primary xl:block xl:bg-transparent transition-transform duration-500 ease-in-out xl:transition-none xl:translate-none" +
-        (showNavOnMobile ? " translate-x-0" : " -translate-x-full")
+        "fixed xl:static z-10 h-full xl:h-auto w-[300px] xl:w-auto left-0 top-0  bg-primary xl:bg-transparent transition-transform duration-500 ease-in-out xl:transition-none " +
+        (showNavOnMobile ? "translate-x-0 " : "-translate-x-full ") +
+        className
       }
     >
       <ClosingCross
@@ -37,6 +44,7 @@ const Navbar = ({ showNavOnMobile, handleMenuToggle }: Navbarprops) => {
             key={eachLink.path}
             path={eachLink.path}
             name={eachLink.name}
+            onClick={handleMenuToggle}
           />
         ))}
       </ul>

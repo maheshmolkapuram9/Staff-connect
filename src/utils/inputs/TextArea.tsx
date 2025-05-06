@@ -1,20 +1,30 @@
 interface TextAreaProps {
+  id: string;
   label: string;
   placeholder: string;
   ref: React.RefObject<HTMLTextAreaElement | null>;
   className?: string;
+  isRequired?: boolean;
 }
 
-const TextArea = ({ label, placeholder, ref, className }: TextAreaProps) => {
+const TextArea = ({
+  id,
+  label,
+  placeholder,
+  ref,
+  className,
+  isRequired,
+}: TextAreaProps) => {
   return (
     <div className={"flex flex-col " + className}>
-      <label htmlFor={label} className="pb-2">
+      <label htmlFor={id} className="pb-2">
         {label}
       </label>
 
       <textarea
-        id={label}
-        name={label}
+        required={isRequired}
+        id={id}
+        name={id}
         ref={ref}
         className="border-table-border border p-4 rounded-md resize-y h-32 leading-tight focus:outline-none focus:border-primary"
         placeholder={placeholder}

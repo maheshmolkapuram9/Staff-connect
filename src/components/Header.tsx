@@ -34,6 +34,12 @@ const Header = () => {
       <Navbar
         showNavOnMobile={showNavOnMobile}
         handleMenuToggle={handleMenuToggle}
+        className="hidden xl:block translate-x-0"
+      />
+      <Navbar
+        showNavOnMobile={showNavOnMobile}
+        handleMenuToggle={handleMenuToggle}
+        className="block xl:hidden"
       />
       <div className="relative group bg-primary rounded-full w-[30px] h-[30px] md:w-[45px] md:h-[45px] flex justify-center items-center cursor-pointer">
         <p className="md:text-3xl font-bold">M</p>

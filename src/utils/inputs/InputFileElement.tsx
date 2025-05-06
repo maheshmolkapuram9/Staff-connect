@@ -30,7 +30,7 @@ const InputFileElement = ({
       <label htmlFor={id} className="pb-2">
         {label}
       </label>
-      <div className="flex gap-6 items-center pt-2">
+      <div className="flex flex-wrap gap-6 items-center pt-2">
         <input
           className={inputclassName}
           type={fileType}

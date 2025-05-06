@@ -1,4 +1,4 @@
-import TableRow from "../utils/TableRow";
+import TableRow from "../utils/table/TableRow";
 
 const StaffTable = () => {
   const columnsListHeadings = [
@@ -33,7 +33,7 @@ const StaffTable = () => {
   ];
   return (
     <div className="overflow-x-auto scroll-smooth">
-      <table className="border-separate border-spacing-0 border rounded-lg border-table-border bg-background">
+      <table className="border-separate border-spacing-0 border rounded-lg border-table-border bg-background w-full">
         <thead className="font-heading text-muted font- ">
           <TableRow columnsList={columnsListHeadings4} />
         </thead>

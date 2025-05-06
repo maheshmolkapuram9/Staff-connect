@@ -4,6 +4,9 @@ import ticket from "../assets/ticket.svg";
 import task from "../assets/task.svg";
 import update from "../assets/update.svg";
 import menu_icon from "../assets/menu-icon.svg";
+import correct from "../assets/correct.svg";
+import edit from "../assets/edit.svg";
+import deleteIcon from "../assets/delete.svg";
 
 const assets = {
   logo,
@@ -12,6 +15,9 @@ const assets = {
   task,
   update,
   menu_icon,
+  correct,
+  edit,
+  deleteIcon,
 };
 
 export default assets;
