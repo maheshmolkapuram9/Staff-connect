@@ -3,6 +3,7 @@ import { JSX } from "react";
 interface TableCellProps {
   text?: string;
   className?: string;
+  classname2?: string;
   optionalImage?: JSX.Element;
 }
 
@@ -28,7 +29,7 @@ const TableCell = ({
             (text == "Active" || text == "Open" || text == "Pending"
               ? "bg-orange-400 text-black font-normal px-3 py-0.5 "
               : " ") +
-            (text == "Inactive" || text == "InProgress"
+            (text == "InActive" || text == "InProgress"
               ? "bg-inactive-background text-gray-50 font-normal px-3 py-0.5 "
               : " ") +
             (text == "Resolved" || text == "Complete"

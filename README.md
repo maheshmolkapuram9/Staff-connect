@@ -92,4 +92,13 @@ staff-connect/
   -- pop-ups with information gives best User experience
 
 - Implemented a feature to Conditionally show extra staff details (Last Login, Storage, Device) for Admins only.
-  -- Refactored StaffTableRow for clean, efficient conditional rendering.
+  -- Refactored StaffTableRow for clean, efficient conditional rendering
+
+- Redux store has been set-up
+  -- Configured a centralized Redux store and integrated it with the application
+  -- Created a userSlice to manage user-related state
+  -- created mocks folder for the mock data
+  -- Added a staff.json file containing sample staff records
+  -- useStaffDeatils hook is built to fetch data from staff.json (simulated async with setTimeout)
+  -- Implemented a Shimmer UI component to elegantly indicate loading states
+  -- Gracefully handled both loading and error states, providing clear feedback to users during the fetch process

@@ -7,7 +7,7 @@ interface StaffTableRowProps {
   staffStatus: string;
   staffLastLogin?: string;
   staffDriveStorage?: string;
-  staffDeviceStatus?: string;
+  staffDeviceType?: string;
   className?: string;
   isAdmin: boolean;
 }
@@ -19,7 +19,7 @@ const StaffTableRow = ({
   staffStatus,
   staffLastLogin,
   staffDriveStorage,
-  staffDeviceStatus,
+  staffDeviceType,
   className,
   isAdmin,
 }: StaffTableRowProps) => {
@@ -33,7 +33,7 @@ const StaffTableRow = ({
         <>
           <TableCell text={staffLastLogin} />
           <TableCell text={staffDriveStorage} />
-          <TableCell text={staffDeviceStatus} />
+          <TableCell text={staffDeviceType} />
         </>
       )}
     </tr>

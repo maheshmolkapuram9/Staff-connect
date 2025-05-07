@@ -6,8 +6,10 @@ import ItRequests from "./pages/ItRequests";
 import Tickets from "./pages/Tickets";
 import ToDoList from "./pages/ToDoList";
 import NotFound from "./pages/NotFound";
+import useStaffDeatils from "./hooks/useStaffDetails";
 
 function App() {
+  useStaffDeatils();
   const router = createBrowserRouter([
     {
       path: "/",
