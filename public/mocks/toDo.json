@@ -1,0 +1,26 @@
+[
+    {
+        "toDoId":1,
+        "userId": 1,
+        "title": "Update Chrome",
+        "completed" : false
+    },
+    {
+        "toDoId":2,
+        "userId": 1,
+        "title": "Update Windows",
+        "completed" : true
+    },
+    {
+        "toDoId":3,
+        "userId": 1,
+        "title": "Send a confirmation email to the client",
+        "completed" : true
+    },
+    {
+        "toDoId":4,
+        "userId": 1,
+        "title": "plan interviews",
+        "completed" : false
+    }
+]

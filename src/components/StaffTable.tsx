@@ -1,15 +1,16 @@
 import { selectStaff } from "../store/staff/staffSlice";
+import ErrorElement from "../utils/inputs/ErrorElement";
 import ShimmerTable from "../utils/shimmer/ShimmerTable";
 import StaffTableRow from "../utils/table/StaffTableRow";
 
 import { useSelector } from "react-redux";
 
 const StaffTable = () => {
-  const { staffDetails, loading, error } = useSelector(selectStaff);
+  const { data: staffDetails, loading, error } = useSelector(selectStaff);
   const isAdmin = true;
 
   if (error) {
-    return <p className="text-warning">error</p>;
+    return <ErrorElement error={error} />;
   }
 
   return !loading ? (

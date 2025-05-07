@@ -37,6 +37,7 @@ npm run test
 
 # Folder Structure:
 
+```text
 staff-connect/
 ├── public/
 ├── src/
@@ -53,9 +54,11 @@ staff-connect/
 │ └── index.css # Global styles and Tailwind base config
 ├── vite.config.ts # Vite configuration
 └── README.md
+```
 
 # WorkFlow:
 
+```text
 - Set up React app using Vite
 - Configured Vitest with React Testing Library and jsdom
 - Integrated Tailwind CSS for utility-first styling
@@ -100,5 +103,17 @@ staff-connect/
   -- created mocks folder for the mock data
   -- Added a staff.json file containing sample staff records
   -- useStaffDeatils hook is built to fetch data from staff.json (simulated async with setTimeout)
+  -- staffDetails data has been fetched and integrated with the table UI
   -- Implemented a Shimmer UI component to elegantly indicate loading states
   -- Gracefully handled both loading and error states, providing clear feedback to users during the fetch process
+
+- To-do slice created to manage to-do tasks
+  -- Added a toDo.json file containing sample to-do records
+  -- useStaffDeatils hook is built to fetch data from toDo.json (simulated async with setTimeout)
+  -- Integrated the to-do list with a table-based UI and implemented error handling to provide user-friendly feedback.
+  -- add a to-do form has handled with loading state, form validation and successful addition of new to-do
+  -- implemented features (mark completed or not, edit To Do, Delete to do)
+
+
+
+```

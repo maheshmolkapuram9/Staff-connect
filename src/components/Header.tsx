@@ -11,14 +11,14 @@ const Header = () => {
   };
   return (
     <header className="relative flex justify-between shadow-2xl items-center bg-background px-4 md:px-10 2xl:px-36 py-4 2xl:py-6 font-heading">
-      <Link to="/">
-        <div className="cursor-pointer flex gap-4">
-          <img
-            className="w-4 md:w-8 xl:hidden"
-            src={assets.menu_icon}
-            alt="menu-icon"
-            onClick={handleMenuToggle}
-          />
+      <div className="cursor-pointer flex gap-4">
+        <img
+          className="w-4 md:w-8 xl:hidden"
+          src={assets.menu_icon}
+          alt="menu-icon"
+          onClick={handleMenuToggle}
+        />
+        <Link to="/">
           <div>
             <img
               className="max-w-[70px] md:max-w-[200px]"
@@ -29,8 +29,9 @@ const Header = () => {
               Staff Connect
             </h1>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
+
       <Navbar
         showNavOnMobile={showNavOnMobile}
         handleMenuToggle={handleMenuToggle}

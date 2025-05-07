@@ -1,16 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
+import { InitialStateType } from "../dataTypes";
 import { staffDetails } from "./datatypes";
 
-interface StaffState {
-  staffDetails: staffDetails[];
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: StaffState = {
-  staffDetails: [],
+const initialState: InitialStateType<staffDetails[]> = {
+  data: [],
   loading: false,
   error: null,
 };
@@ -20,7 +15,7 @@ export const staffSlice = createSlice({
   initialState,
   reducers: {
     setStaffDetails: (state, action: PayloadAction<staffDetails[]>) => {
-      state.staffDetails = action.payload;
+      state.data = action.payload;
       state.loading = false;
       state.error = null;
     },

@@ -6,6 +6,7 @@ interface ConfirmationPopUpProps {
   onClick: () => void;
   redirectButtonText: string;
   linkPath?: string;
+  submissionHandler?: () => void;
 }
 
 const ConfirmationPopUp = ({
@@ -13,6 +14,7 @@ const ConfirmationPopUp = ({
   onClick,
   redirectButtonText,
   linkPath,
+  submissionHandler,
 }: ConfirmationPopUpProps) => {
   return (
     <div className=" fixed rounded-xl bg-white w-[80%] md:w-[400px] h-[250px] left-1/2 top-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2  ">
@@ -22,6 +24,7 @@ const ConfirmationPopUp = ({
           text={redirectButtonText}
           linkpath={linkPath}
           className="mt-4"
+          onClick={submissionHandler}
         />
         <ClosingCross onClick={onClick} className="bg-primary text-white" />
       </div>

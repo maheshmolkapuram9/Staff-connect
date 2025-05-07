@@ -41,7 +41,7 @@ const InputFileElement = ({
         />
         <label
           htmlFor={id}
-          className="cursor-pointer bg-black px-4 py-1 rounded-md text-text-primary shadow-2xl"
+          className="cursor-pointer bg-black border border-table-border px-4 py-1 rounded-md text-text-primary shadow-2xl"
         >
           Choose File
         </label>

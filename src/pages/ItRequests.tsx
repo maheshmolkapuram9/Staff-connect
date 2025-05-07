@@ -5,18 +5,28 @@ import TextArea from "../utils/inputs/TextArea";
 import PageHeading from "../utils/PageHeading";
 import InputFileElement from "../utils/inputs/InputFileElement";
 import ConfirmationPopUp from "../utils/ConfirmationPopUp";
+import assets from "../utils/assets";
+
+type issuetype =
+  | ""
+  | "Software Bug"
+  | "Network Isuue"
+  | "Hardware Failure"
+  | "other";
 
 const ItRequests = () => {
-  const issueTypeRef = useRef<HTMLSelectElement>(null);
+  const [issueType, setissueType] = useState<issuetype>("");
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [error, setError] = useState<string>("");
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const handleSubmit = () => {
+    setLoading(true);
     console.log(
       "values are",
       descriptionRef.current?.value,
-      issueTypeRef.current?.value,
+      issueType,
       selectedFile,
     );
     const validation = (
@@ -33,7 +43,7 @@ const ItRequests = () => {
       }
     };
 
-    validation(issueTypeRef.current?.value, descriptionRef.current?.value);
+    validation(issueType, descriptionRef.current?.value);
   };
   return (
     <div className="w-full lg:w-[600px] bg-background shadow-2xl mx-auto p-2 lg:p-6 rounded-lg">
@@ -53,7 +63,10 @@ const ItRequests = () => {
             { value: "Hardware Failure", text: "Hardware Failure" },
             { value: "other", text: "other" },
           ]}
-          ref={issueTypeRef}
+          value={issueType}
+          onChange={(e) => {
+            setissueType(e.target.value as issuetype);
+          }}
           className="pb-8"
         />
         <TextArea
@@ -78,7 +91,22 @@ const ItRequests = () => {
             {error}
           </p>
         )}
-        <OrangeButton text="Submit Request" onClick={handleSubmit} />
+        <OrangeButton
+          onClick={handleSubmit}
+          className="flex justify-center"
+          {...(loading
+            ? {
+                loadingElement: (
+                  <img
+                    className="w-7 h-7 animate-spin"
+                    src={assets.loader}
+                    alt="loading spinner"
+                  />
+                ),
+                disabled: true,
+              }
+            : { text: "Submit Request" })}
+        />
       </form>
       {showConfirmation && (
         <ConfirmationPopUp

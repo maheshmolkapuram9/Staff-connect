@@ -6,14 +6,37 @@ import ToDoTableRow from "../utils/table/ToDoTableRow";
 import ConfirmationPopUp from "../utils/ConfirmationPopUp";
 import AddToDoForm, { toDoStatus } from "./AddToDoForm";
 import ClosingCross from "../utils/ClosingCross";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changeToDoStatus,
+  deleteToDo,
+  selectToDo,
+} from "../store/toDoList/toDoSlice";
+import ShimmerTable from "../utils/shimmer/ShimmerTable";
+import ErrorElement from "../utils/inputs/ErrorElement";
+
+interface deleteType {
+  state: boolean;
+  toDoId: number | null;
+}
 
 const ToDoTable = () => {
+  const dispatch = useDispatch();
   const [showEditToDoItem, setShowEditToDoItem] = useState<boolean>(false);
+  const [toDoIdValue, setToDoIdValue] = useState<number>(1);
   const [showDeleteConfirmation, setShowDeleteConfirmation] =
-    useState<boolean>(false);
+    useState<deleteType>({
+      state: false,
+      toDoId: null,
+    });
   const [title, setTitle] = useState<string>("Update value");
   const [toDoStatus, setToDoStatus] = useState<toDoStatus>("Pending");
-  return (
+  const { data: toDoList, loading, error } = useSelector(selectToDo);
+  if (error) {
+    return <ErrorElement error={error} />;
+  }
+
+  return !loading ? (
     <div className="overflow-x-auto scroll-smooth">
       <table className="border-separate border-spacing-0 border rounded-lg border-table-border bg-background w-full">
         <thead className="font-heading text-muted font- ">
@@ -25,65 +48,61 @@ const ToDoTable = () => {
           />
         </thead>
         <tbody>
-          <ToDoTableRow
-            title="i am doing something crazy"
-            titleImageComponent={<ToDoDone done={true} />}
-            editImage={
-              <EditImage
-                image={assets.edit}
-                onClick={() => {
-                  setShowEditToDoItem(true);
-                  setTitle("Set title here");
-                  setToDoStatus("InProgress" as toDoStatus);
-                }}
+          {toDoList &&
+            toDoList.map((eachToDo) => (
+              <ToDoTableRow
+                key={eachToDo.toDoId}
+                title={eachToDo.title}
+                titleImageComponent={
+                  <ToDoDone
+                    done={eachToDo.completed}
+                    onClick={() => dispatch(changeToDoStatus(eachToDo.toDoId))}
+                  />
+                }
+                editImage={
+                  <EditImage
+                    image={assets.edit}
+                    onClick={() => {
+                      setToDoIdValue(eachToDo.toDoId);
+                      setShowEditToDoItem(true);
+                      setTitle(eachToDo.title);
+                      setToDoStatus(
+                        eachToDo.completed
+                          ? "Completed"
+                          : ("Pending" as toDoStatus),
+                      );
+                    }}
+                  />
+                }
+                deleteImage={
+                  <EditImage
+                    image={assets.deleteIcon}
+                    onClick={() => {
+                      setShowDeleteConfirmation({
+                        state: true,
+                        toDoId: eachToDo.toDoId,
+                      });
+                    }}
+                  />
+                }
+                toDoStatus={eachToDo.completed ? "Complete" : "Pending"}
               />
-            }
-            deleteImage={
-              <EditImage
-                image={assets.deleteIcon}
-                onClick={() => {
-                  setShowDeleteConfirmation(true);
-                }}
-              />
-            }
-            toDoStatus="Complete"
-          />
-          <ToDoTableRow
-            title="i am doing something crazy"
-            titleImageComponent={<ToDoDone done={false} />}
-            editImage={<EditImage image={assets.edit} />}
-            toDoStatus="Complete"
-            deleteImage={<EditImage image={assets.deleteIcon} />}
-          />
-          <ToDoTableRow
-            title="i am doing something crazy"
-            titleImageComponent={<ToDoDone done={false} />}
-            editImage={<EditImage image={assets.edit} />}
-            toDoStatus="Complete"
-            deleteImage={<EditImage image={assets.deleteIcon} />}
-          />
-          <ToDoTableRow
-            title="i am doing something crazy"
-            editImage={<EditImage image={assets.edit} />}
-            titleImageComponent={<ToDoDone done={false} />}
-            toDoStatus="Complete"
-            deleteImage={<EditImage image={assets.deleteIcon} />}
-          />
-          <ToDoTableRow
-            title="i am doing something crazy"
-            editImage={<EditImage image={assets.edit} />}
-            titleImageComponent={<ToDoDone done={false} />}
-            toDoStatus="Complete"
-            deleteImage={<EditImage image={assets.deleteIcon} />}
-          />
+            ))}
         </tbody>
       </table>
-      {showDeleteConfirmation && (
+      {showDeleteConfirmation.state && (
         <ConfirmationPopUp
           messageText="Do you want to Delete the To Do Item?"
           redirectButtonText="Delete"
           onClick={() => {
-            setShowDeleteConfirmation(false);
+            setShowDeleteConfirmation({ state: false, toDoId: null });
+          }}
+          submissionHandler={() => {
+            const toDoId = showDeleteConfirmation?.toDoId;
+            if (typeof toDoId === "number") {
+              dispatch(deleteToDo(toDoId));
+            }
+            setShowDeleteConfirmation({ state: false, toDoId: null });
           }}
         />
       )}
@@ -94,6 +113,11 @@ const ToDoTable = () => {
               pageHeading="Update To-Do Item"
               titleValue={title}
               toDoStatusValue={toDoStatus}
+              isUpdate={true}
+              toDoIdValue={toDoIdValue}
+              onClose={() => {
+                setShowEditToDoItem(false);
+              }}
             />
             <ClosingCross
               onClick={() => {
@@ -105,6 +129,8 @@ const ToDoTable = () => {
         </div>
       )}
     </div>
+  ) : (
+    <ShimmerTable />
   );
 };
 

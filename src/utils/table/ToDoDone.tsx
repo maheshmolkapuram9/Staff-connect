@@ -1,10 +1,16 @@
 import assets from "../assets";
 
-const ToDoDone = ({ done }: { done: boolean }) => {
+interface ToDoDoneProps {
+  done: boolean;
+  onClick: () => void;
+}
+
+const ToDoDone = ({ done, onClick }: ToDoDoneProps) => {
   return (
     <div
+      onClick={onClick}
       className={
-        "w-3 h-3 md:w-5 md:h-5  rounded-full flex justify-center items-center border-2 border-muted " +
+        "w-3 h-3 md:w-5 md:h-5  rounded-full flex justify-center items-center border-2 border-muted cursor-pointer hover:scale-110 transition duration-300 " +
         (done && "bg-text-primary border-0")
       }
     >

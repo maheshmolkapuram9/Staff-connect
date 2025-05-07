@@ -7,9 +7,11 @@ import Tickets from "./pages/Tickets";
 import ToDoList from "./pages/ToDoList";
 import NotFound from "./pages/NotFound";
 import useStaffDeatils from "./hooks/useStaffDetails";
+import useToDoList from "./hooks/useToDoDetails";
 
 function App() {
   useStaffDeatils();
+  useToDoList();
   const router = createBrowserRouter([
     {
       path: "/",
