@@ -2,29 +2,29 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
-  setStaffDetails,
-  setStaffError,
-  setStaffLoading,
-} from "../store/staff/staffSlice";
+  setTicketDetails,
+  setTicketError,
+  setTicketLoading,
+} from "../store/tickets/ticketSlice";
 
-const useStaffDeatils = () => {
+const useTicketDetails = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setStaffLoading());
-    const fetchStaffDeatils = async () => {
+    dispatch(setTicketLoading());
+    const fetchTicketDeatils = async () => {
       try {
-        const res = await fetch("/mocks/staff.json");
+        const res = await fetch("/mocks/tickets.json");
         if (!res.ok) throw new Error("Failed to fetch staff deails data");
         const data = await res.json();
-        dispatch(setStaffDetails(data));
+        dispatch(setTicketDetails(data));
       } catch (err) {
         if (err instanceof Error) {
-          dispatch(setStaffError(err.message));
+          dispatch(setTicketError(err.message));
         } else {
           dispatch(
-            setStaffError(
-              "An unknown error occurred in fetching staff details",
+            setTicketError(
+              "An unknown error occurred in fetching ticket details",
             ),
           );
         }
@@ -32,9 +32,9 @@ const useStaffDeatils = () => {
     };
 
     setTimeout(() => {
-      fetchStaffDeatils();
+      fetchTicketDeatils();
     }, 500);
   }, []);
 };
 
-export default useStaffDeatils;
+export default useTicketDetails;

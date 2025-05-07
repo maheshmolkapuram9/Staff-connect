@@ -10,7 +10,7 @@ const ToDoDone = ({ done, onClick }: ToDoDoneProps) => {
     <div
       onClick={onClick}
       className={
-        "w-3 h-3 md:w-5 md:h-5  rounded-full flex justify-center items-center border-2 border-muted cursor-pointer hover:scale-110 transition duration-300 " +
+        "flex-none w-3 h-3 md:w-5 md:h-5  rounded-full flex justify-center items-center border-2 border-muted cursor-pointer hover:scale-110 transition duration-300 " +
         (done && "bg-text-primary border-0")
       }
     >

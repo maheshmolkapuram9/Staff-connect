@@ -22,7 +22,9 @@ const useToDoList = () => {
         if (err instanceof Error) {
           dispatch(setToDoError(err.message));
         } else {
-          dispatch(setToDoError("An unknown error occurred"));
+          dispatch(
+            setToDoError("An unknown error occurred in fetching to-do details"),
+          );
         }
       }
     };

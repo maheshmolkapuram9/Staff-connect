@@ -8,10 +8,12 @@ import ToDoList from "./pages/ToDoList";
 import NotFound from "./pages/NotFound";
 import useStaffDeatils from "./hooks/useStaffDetails";
 import useToDoList from "./hooks/useToDoDetails";
+import useTicketDetails from "./hooks/useTicketDetails";
 
 function App() {
   useStaffDeatils();
   useToDoList();
+  useTicketDetails();
   const router = createBrowserRouter([
     {
       path: "/",

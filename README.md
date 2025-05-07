@@ -111,8 +111,16 @@ staff-connect/
   -- Added a toDo.json file containing sample to-do records
   -- useStaffDeatils hook is built to fetch data from toDo.json (simulated async with setTimeout)
   -- Integrated the to-do list with a table-based UI and implemented error handling to provide user-friendly feedback.
+  -- add to-Do form simulated with async, await and setTimeout during submission.
   -- add a to-do form has handled with loading state, form validation and successful addition of new to-do
   -- implemented features (mark completed or not, edit To Do, Delete to do)
+
+- tickets slice created to manage tickets
+  -- Added a tickets.json file conatining tickets records
+  -- useTicketDetails hook is built to fetch data from tickets.json (simulated async with setTimeout)
+  -- Integrated the tickets list with a table-based UI and implemented error handling to provide user-friendly feedback.
+  -- IT requests form simulated with async, await and setTimeout during submission.
+  -- IT request form is validated and handled loading state and errors
 
 
 

@@ -1,0 +1,22 @@
+[
+    {
+        "staffId" : 1,
+        "ticketId" : 101,
+        "user" : "alice@brrmedia.co.uk",
+        "issue" : "Wi-Fi Connectivity",
+        "description" : "My MacBook keeps dropping Wi-Fi.",
+        "status" : "Open",
+        "created" : "2024-03-28T09:00:00Z",
+        "fileName": "fileName1"
+    },
+    {
+        "staffId" : 1,
+        "ticketId" : 101,
+        "user" : "alice@brrmedia.co.uk",
+        "issue" : "Wi-Fi Connectivity",
+        "description" : "My MacBook keeps dropping Wi-Fi.",
+        "status" : "Closed",
+        "created" : "2024-03-28T09:00:00Z",
+        "fileName": "fileName2"
+    }
+]

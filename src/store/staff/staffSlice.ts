@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 import { InitialStateType } from "../dataTypes";
-import { staffDetails } from "./datatypes";
+import { staffDetails } from "./dataTypes";
 
 const initialState: InitialStateType<staffDetails[]> = {
   data: [],

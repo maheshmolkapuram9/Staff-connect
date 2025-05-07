@@ -2,11 +2,11 @@ import InputText from "../utils/inputs/InputText";
 import PageHeading from "../utils/PageHeading";
 import DropDown from "../utils/inputs/DropDown";
 import OrangeButton from "../utils/inputs/OrangeButton";
-import React, { useState } from "react";
 import assets from "../utils/assets";
 import { toDoType } from "../store/toDoList/dataTypes";
 import { useDispatch } from "react-redux";
 import { addToDo, editToDo } from "../store/toDoList/toDoSlice";
+import { useState } from "react";
 
 export type toDoStatus = "" | "Pending" | "Completed";
 
@@ -42,7 +42,7 @@ const AddToDoForm = ({
 
     const toDoPayload: toDoType = {
       toDoId: toDoId,
-      userId: 1,
+      staffId: 1,
       title: title,
       completed: toDoStatus === "Completed" && true,
     };
@@ -67,6 +67,7 @@ const AddToDoForm = ({
         className="text-muted flex flex-col"
         onSubmit={(e) => {
           e.preventDefault();
+          handleSubmit();
         }}
       >
         <InputText
@@ -100,9 +101,7 @@ const AddToDoForm = ({
           </p>
         )}
         <OrangeButton
-          onClick={() => {
-            handleSubmit();
-          }}
+          type="submit"
           className="flex justify-center"
           {...(loading
             ? {

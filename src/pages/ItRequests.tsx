@@ -6,44 +6,72 @@ import PageHeading from "../utils/PageHeading";
 import InputFileElement from "../utils/inputs/InputFileElement";
 import ConfirmationPopUp from "../utils/ConfirmationPopUp";
 import assets from "../utils/assets";
+import { ticketType } from "../store/tickets/dataTypes";
+import { useDispatch } from "react-redux";
+import { addTicket } from "../store/tickets/ticketSlice";
 
 type issuetype =
   | ""
+  | "Wi-Fi Connectivity"
   | "Software Bug"
   | "Network Isuue"
   | "Hardware Failure"
   | "other";
 
 const ItRequests = () => {
+  const dispatch = useDispatch();
   const [issueType, setissueType] = useState<issuetype>("");
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [error, setError] = useState<string>("");
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const handleSubmit = () => {
-    setLoading(true);
-    console.log(
-      "values are",
-      descriptionRef.current?.value,
-      issueType,
-      selectedFile,
-    );
-    const validation = (
-      issueType: string | undefined,
-      description: string | undefined,
-    ) => {
-      if (!issueType) {
-        setError("Please select any issue type!");
-      } else if (!description || (description && description.length < 10)) {
-        setError("Description must be atleast 10 chars long.");
-      } else {
-        setError("");
-        setShowConfirmation(true);
-      }
-    };
 
-    validation(issueType, descriptionRef.current?.value);
+  const validateForm = (
+    issueType: string | undefined,
+    description: string | undefined,
+  ): boolean => {
+    if (!issueType) {
+      setError("Please select any issue type!");
+      return false;
+    }
+
+    if (!description || description.length < 10) {
+      setError("Description must be at least 10 characters long.");
+      return false;
+    }
+
+    setError("");
+    return true;
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    const description = descriptionRef.current?.value?.trim() || "";
+    const isValid = validateForm(issueType, description);
+
+    if (!isValid) {
+      setLoading(false);
+      return;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    const itRequestPayload: ticketType = {
+      staffId: 1,
+      ticketId: 100,
+      user: "Mahesh",
+      issue: issueType,
+      description: descriptionRef.current?.value
+        ? descriptionRef.current?.value
+        : "",
+      status: "Open",
+      created: "2024-03-28T09:00:00Z",
+      fileName: selectedFile?.name ? selectedFile?.name : "",
+    };
+    dispatch(addTicket(itRequestPayload));
+    setLoading(false);
+    setShowConfirmation(true);
   };
   return (
     <div className="w-full lg:w-[600px] bg-background shadow-2xl mx-auto p-2 lg:p-6 rounded-lg">
@@ -52,12 +80,14 @@ const ItRequests = () => {
         className="text-muted flex flex-col"
         onSubmit={(e) => {
           e.preventDefault();
+          handleSubmit();
         }}
       >
         <DropDown
           label="Issue Type"
           options={[
             { value: "", text: "Select the issue type" },
+            { value: "Wi-Fi Connectivity", text: "Wi-Fi Connectivity" },
             { value: "Software Bug", text: "Software Bug" },
             { value: "Network Isuue", text: "Network Isuue" },
             { value: "Hardware Failure", text: "Hardware Failure" },
@@ -68,6 +98,7 @@ const ItRequests = () => {
             setissueType(e.target.value as issuetype);
           }}
           className="pb-8"
+          isRequired={true}
         />
         <TextArea
           id="Description"
@@ -92,8 +123,9 @@ const ItRequests = () => {
           </p>
         )}
         <OrangeButton
-          onClick={handleSubmit}
+          type="submit"
           className="flex justify-center"
+          {...(showConfirmation && { disabled: true })}
           {...(loading
             ? {
                 loadingElement: (
