@@ -1,47 +1,55 @@
-import TableRow from "../utils/table/TableRow";
+import StaffTableRow from "../utils/table/StaffTableRow";
 
 const StaffTable = () => {
-  const columnsListHeadings = [
-    { text: "Caroline Williams", className: "" },
-    { text: "Software Developer", className: "" },
-    { text: "carolinewilliams123@gmail.com", className: "" },
-    { text: "Active", className: "" },
-  ];
-  const columnsListHeadings1 = [
-    { text: "Mahesh", className: "" },
-    { text: "Front end developer", className: "" },
-    { text: "maheshmolkapuram@gmail.com", className: "" },
-    { text: "Inactive", className: "" },
-  ];
-  const columnsListHeadings2 = [
-    { text: "Name", className: "" },
-    { text: "Role", className: "" },
-    { text: "Email", className: "" },
-    { text: "InProgress", className: "" },
-  ];
-  const columnsListHeadings3 = [
-    { text: "Name", className: "" },
-    { text: "Role", className: "" },
-    { text: "Email", className: "" },
-    { text: "Open", className: "" },
-  ];
-  const columnsListHeadings4 = [
-    { text: "Name", className: "" },
-    { text: "Role", className: "" },
-    { text: "Email", className: "" },
-    { text: "Complete", className: "" },
-  ];
+  const isAdmin = true;
   return (
     <div className="overflow-x-auto scroll-smooth">
       <table className="border-separate border-spacing-0 border rounded-lg border-table-border bg-background w-full">
         <thead className="font-heading text-muted font- ">
-          <TableRow columnsList={columnsListHeadings4} />
+          <StaffTableRow
+            staffTitle="Name"
+            staffRole="Role"
+            staffEmail="Email"
+            staffStatus="Status"
+            isAdmin={isAdmin}
+            {...(isAdmin
+              ? {
+                  staffLastLogin: "Last Login",
+                  staffDriveStorage: "Drive Storage",
+                  staffDeviceStatus: "Device Status",
+                }
+              : {})}
+          />
         </thead>
         <tbody>
-          <TableRow columnsList={columnsListHeadings1} />
-          <TableRow columnsList={columnsListHeadings2} />
-          <TableRow columnsList={columnsListHeadings3} />
-          <TableRow columnsList={columnsListHeadings} />
+          <StaffTableRow
+            staffTitle="Name"
+            staffRole="Role"
+            staffEmail="Email"
+            staffStatus="Status"
+            isAdmin={isAdmin}
+            {...(isAdmin
+              ? {
+                  staffLastLogin: "Last Login",
+                  staffDriveStorage: "Drive Storage",
+                  staffDeviceStatus: "Device Status",
+                }
+              : {})}
+          />
+          <StaffTableRow
+            staffTitle="Name"
+            staffRole="Role"
+            staffEmail="Email"
+            staffStatus="Status"
+            isAdmin={isAdmin}
+            {...(isAdmin
+              ? {
+                  staffLastLogin: "Last Login",
+                  staffDriveStorage: "Drive Storage",
+                  staffDeviceStatus: "Device Status",
+                }
+              : {})}
+          />
         </tbody>
       </table>
     </div>

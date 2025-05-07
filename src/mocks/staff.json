@@ -1,0 +1,22 @@
+[
+    {
+        "staffId": 1,
+        "name": "Alice Johnson",
+        "role": "Frontend Developer",
+        "email": "alice@brrmedia.com",
+        "status": "Active",
+        "lastLogin": "2025-05-05",
+        "driveStorage": "2.4GB",
+        "deviceType": "MacBook Pro"
+    },
+    {
+        "staffId": 2,
+        "name": "Zishan Shaik",
+        "role": "Full stack Developer",
+        "email": "alice@brrmedia.com",
+        "status": "InActive",
+        "lastLogin": "2025-05-05",
+        "driveStorage": "2.4GB",
+        "deviceType": "MacBook Pro"
+    }
+]

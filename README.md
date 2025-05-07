@@ -90,3 +90,6 @@ staff-connect/
   -- can Edit a To-Do
   -- can Delete a To-do
   -- pop-ups with information gives best User experience
+
+- Implemented a feature to Conditionally show extra staff details (Last Login, Storage, Device) for Admins only.
+  -- Refactored StaffTableRow for clean, efficient conditional rendering.
