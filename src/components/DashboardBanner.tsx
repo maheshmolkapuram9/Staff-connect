@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import assets from "../utils/assets";
+import { selectUser } from "../store/user/userSlice";
 
 const DashboardBanner = () => {
+  const userName = useSelector(selectUser).name;
   return (
     <div className="py-6 lg:py-10">
       <div className="relative width-full ">
@@ -12,7 +15,10 @@ const DashboardBanner = () => {
         <div className="absolute top-0 left-0 bg-gradient-to-r from-black/85 w-full h-full rounded-4xl">
           <div className="max-w-[70%] 2xl:max-w-[60%] flex flex-col justify-end h-full pl-4 lg:pl-10 pb-4 lg:pb-16 font-heading">
             <h1 className="text-s md:text-4xl 2xl:text-7xl font-bold pb-2 lg:pb-6 2xl:py-10">
-              Welcome, <span className="text-primary">Mahesh</span>
+              Welcome,{" "}
+              <span className="text-primary">
+                {userName ? userName : "User"}
+              </span>
               <span> !</span>
             </h1>
             <p className="text-xs md:text-lg 2xl:text-2xl font-thin tracking-wide text-gray-300 pb-2">

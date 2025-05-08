@@ -4,8 +4,13 @@ import type { RootState } from "../store";
 import { InitialStateType } from "../dataTypes";
 import { toDoType } from "./dataTypes";
 
-const initialState: InitialStateType<toDoType[]> = {
-  data: [],
+interface toDosLocal {
+  toDos: toDoType[];
+  userToDos: toDoType[];
+}
+
+const initialState: InitialStateType<toDosLocal> = {
+  data: { toDos: [], userToDos: [] },
   loading: false,
   error: null,
 };
@@ -15,21 +20,24 @@ export const toDoSlice = createSlice({
   initialState,
   reducers: {
     setToDoList: (state, action: PayloadAction<toDoType[]>) => {
-      state.data = action.payload;
+      state.data.toDos = action.payload;
       state.loading = false;
       state.error = null;
     },
+    setUserToDoList: (state, action: PayloadAction<toDoType[]>) => {
+      state.data.userToDos = action.payload;
+    },
     addToDo: (state, action: PayloadAction<toDoType>) => {
-      const lastToDo = state.data[state.data.length - 1];
+      const lastToDo = state.data.toDos[state.data.toDos.length - 1];
       const nextId = lastToDo ? lastToDo.toDoId + 1 : 1;
 
-      state.data.push({
+      state.data.toDos.push({
         ...action.payload,
         toDoId: nextId,
       });
     },
     editToDo: (state, action: PayloadAction<toDoType>) => {
-      const toDo = state.data.find(
+      const toDo = state.data.toDos.find(
         (eachToDo) => eachToDo.toDoId === action.payload.toDoId,
       );
       if (toDo) {
@@ -38,7 +46,7 @@ export const toDoSlice = createSlice({
       }
     },
     changeToDoStatus: (state, action: PayloadAction<number>) => {
-      const toDo = state.data.find(
+      const toDo = state.data.toDos.find(
         (eachToDo) => eachToDo.toDoId === action.payload,
       );
       if (toDo) {
@@ -46,7 +54,7 @@ export const toDoSlice = createSlice({
       }
     },
     deleteToDo: (state, action: PayloadAction<number>) => {
-      state.data = state.data.filter(
+      state.data.toDos = state.data.toDos.filter(
         (eachToDo) => eachToDo.toDoId !== action.payload,
       );
     },
@@ -63,6 +71,7 @@ export const toDoSlice = createSlice({
 
 export const {
   setToDoList,
+  setUserToDoList,
   addToDo,
   editToDo,
   changeToDoStatus,
@@ -72,5 +81,8 @@ export const {
 } = toDoSlice.actions;
 
 export const selectToDo = (state: RootState) => state.todo;
+export const selectPendingTasks = (state: RootState) =>
+  state.todo.data.userToDos.filter((eachTodo) => eachTodo.completed === false)
+    .length;
 
 export default toDoSlice.reducer;

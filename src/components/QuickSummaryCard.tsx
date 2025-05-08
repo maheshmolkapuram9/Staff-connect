@@ -10,14 +10,16 @@ const QuickSummaryCard = ({
   imgPath,
 }: QuickSummaryCardProps) => {
   return (
-    <div className="bg-card rounded-2xl flex p-4 md:p-8 justify-between items-center grow 2xl:grow-0 2xl:min-w-[450px]">
+    <div className="bg-card rounded-2xl flex p-2 md:p-8 justify-between items-center grow 2xl:grow-0 2xl:min-w-[450px]">
       <div>
-        <p className="font-heading text-4xl md:text-6xl font-semibold pb-4 md:pb-10">
+        <p className="font-heading text-lg md:text-4xl xl:text-6xl font-semibold pb-4 md:pb-10">
           {quantity}
         </p>
-        <p className="text-text-muted text-2xl  2xl:text-4xl ">{title}</p>
+        <p className="text-text-muted text-xs md:text-lg xl:text-2xl  2xl:text-4xl ">
+          {title}
+        </p>
       </div>
-      <div className="w-14 md:w-20">
+      <div className="w-4 md:w-8 xl:w-20">
         <img src={imgPath} alt="tickets image" />
       </div>
     </div>

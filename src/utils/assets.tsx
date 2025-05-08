@@ -8,6 +8,7 @@ import correct from "../assets/correct.svg";
 import edit from "../assets/edit.svg";
 import deleteIcon from "../assets/delete.svg";
 import loader from "../assets/loader.svg";
+import wentWrong from "../assets/wentwrong.svg";
 
 const assets = {
   logo,
@@ -20,6 +21,7 @@ const assets = {
   edit,
   deleteIcon,
   loader,
+  wentWrong,
 };
 
 export default assets;

@@ -1,22 +1,253 @@
 [
     {
-        "staffId" : 1,
-        "ticketId" : 101,
-        "user" : "alice@brrmedia.co.uk",
-        "issue" : "Wi-Fi Connectivity",
-        "description" : "My MacBook keeps dropping Wi-Fi.",
-        "status" : "Open",
-        "created" : "2024-03-28T09:00:00Z",
-        "fileName": "fileName1"
+      "staffId": 1,
+      "ticketId": 100,
+      "user": "alice",
+      "issue": "Wi-Fi Connectivity",
+      "description": "Laptop frequently disconnects from office Wi-Fi.",
+      "status": "Open",
+      "created": "2024-03-28T09:00:00Z",
+      "fileName": "file_100.pdf"
     },
     {
-        "staffId" : 1,
-        "ticketId" : 101,
-        "user" : "alice@brrmedia.co.uk",
-        "issue" : "Wi-Fi Connectivity",
-        "description" : "My MacBook keeps dropping Wi-Fi.",
-        "status" : "Closed",
-        "created" : "2024-03-28T09:00:00Z",
-        "fileName": "fileName2"
+      "staffId": 1,
+      "ticketId": 101,
+      "user": "alice",
+      "issue": "Software Bug",
+      "description": "VS Code crashes when opening large files.",
+      "status": "Closed",
+      "created": "2024-04-01T10:15:00Z",
+      "fileName": "file_101.pdf"
+    },
+    {
+      "staffId": 1,
+      "ticketId": 102,
+      "user": "alice",
+      "issue": "Network Isuue",
+      "description": "Unable to access VPN remotely.",
+      "status": "Open",
+      "created": "2024-04-03T12:00:00Z",
+      "fileName": "file_102.pdf"
+    },
+    {
+      "staffId": 1,
+      "ticketId": 108,
+      "user": "alice",
+      "issue": "Hardware Failure",
+      "description": "Mouse is unresponsive intermittently.",
+      "status": "Closed",
+      "created": "2024-04-13T10:10:00Z",
+      "fileName": "file_108.pdf"
+    },
+    {
+      "staffId": 1,
+      "ticketId": 109,
+      "user": "alice",
+      "issue": "other",
+      "description": "Need software license renewal.",
+      "status": "Open",
+      "created": "2024-04-15T14:00:00Z",
+      "fileName": "file_109.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 110,
+        "user": "bob",
+        "issue": "Wi-Fi Connectivity",
+        "description": "Wi-Fi disconnects after waking laptop from sleep.",
+        "status": "Closed",
+        "created": "2024-03-29T08:45:00Z",
+        "fileName": "file_110.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 111,
+        "user": "bob",
+        "issue": "Software Bug",
+        "description": "Notion freezes when adding large images.",
+        "status": "Open",
+        "created": "2024-04-02T09:10:00Z",
+        "fileName": "file_111.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 112,
+        "user": "bob",
+        "issue": "Network Isuue",
+        "description": "Cannot connect to shared drive.",
+        "status": "Open",
+        "created": "2024-04-04T11:30:00Z",
+        "fileName": "file_112.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 113,
+        "user": "bob",
+        "issue": "Hardware Failure",
+        "description": "External monitor flickers randomly.",
+        "status": "Closed",
+        "created": "2024-04-06T12:00:00Z",
+        "fileName": "file_113.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 114,
+        "user": "bob",
+        "issue": "other",
+        "description": "Need admin access to install custom tools.",
+        "status": "Open",
+        "created": "2024-04-08T10:00:00Z",
+        "fileName": "file_114.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 115,
+        "user": "bob",
+        "issue": "Wi-Fi Connectivity",
+        "description": "Office Wi-Fi is very slow after 4 PM.",
+        "status": "Open",
+        "created": "2024-04-10T15:00:00Z",
+        "fileName": "file_115.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 116,
+        "user": "bob",
+        "issue": "Software Bug",
+        "description": "Slack notifications not showing.",
+        "status": "Closed",
+        "created": "2024-04-12T11:45:00Z",
+        "fileName": "file_116.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 117,
+        "user": "bob",
+        "issue": "Network Isuue",
+        "description": "Zoom disconnects frequently during meetings.",
+        "status": "Open",
+        "created": "2024-04-14T09:30:00Z",
+        "fileName": "file_117.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 118,
+        "user": "bob",
+        "issue": "Hardware Failure",
+        "description": "Laptop battery drains too fast.",
+        "status": "Closed",
+        "created": "2024-04-15T13:15:00Z",
+        "fileName": "file_118.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 119,
+        "user": "bob",
+        "issue": "other",
+        "description": "Need HDMI adapter for client presentation.",
+        "status": "Open",
+        "created": "2024-04-17T14:20:00Z",
+        "fileName": "file_119.pdf"
+    },
+    {
+        "staffId": 1,
+        "ticketId": 140,
+        "user": "alice",
+        "issue": "Software Bug",
+        "description": "Figma keeps freezing during prototyping.",
+        "status": "Open",
+        "created": "2024-04-22T10:15:00Z",
+        "fileName": "file_140.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 141,
+        "user": "bob",
+        "issue": "Network Isuue",
+        "description": "VPN randomly disconnects every hour.",
+        "status": "Closed",
+        "created": "2024-04-21T09:30:00Z",
+        "fileName": "file_141.pdf"
+    },
+    {
+        "staffId": 3,
+        "ticketId": 142,
+        "user": "carol",
+        "issue": "Wi-Fi Connectivity",
+        "description": "Wi-Fi signal drops near kitchen area.",
+        "status": "Open",
+        "created": "2024-04-20T11:00:00Z",
+        "fileName": "file_142.pdf"
+    },
+    {
+        "staffId": 1,
+        "ticketId": 143,
+        "user": "alice",
+        "issue": "Hardware Failure",
+        "description": "Laptop battery not charging.",
+        "status": "Closed",
+        "created": "2024-04-19T14:20:00Z",
+        "fileName": "file_143.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 144,
+        "user": "bob",
+        "issue": "Software Bug",
+        "description": "Excel crashes when importing CSV.",
+        "status": "Open",
+        "created": "2024-04-18T10:10:00Z",
+        "fileName": "file_144.pdf"
+    },
+    {
+        "staffId": 3,
+        "ticketId": 145,
+        "user": "carol",
+        "issue": "other",
+        "description": "Requesting standing desk setup.",
+        "status": "Closed",
+        "created": "2024-04-17T08:00:00Z",
+        "fileName": "file_145.pdf"
+    },
+    {
+        "staffId": 1,
+        "ticketId": 146,
+        "user": "alice",
+        "issue": "Network Isuue",
+        "description": "Can't access shared folder on NAS.",
+        "status": "Open",
+        "created": "2024-04-16T13:40:00Z",
+        "fileName": "file_146.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 147,
+        "user": "bob",
+        "issue": "Wi-Fi Connectivity",
+        "description": "No internet in conference room.",
+        "status": "Closed",
+        "created": "2024-04-15T15:25:00Z",
+        "fileName": "file_147.pdf"
+    },
+    {
+        "staffId": 3,
+        "ticketId": 148,
+        "user": "carol",
+        "issue": "Hardware Failure",
+        "description": "Monitor flickers intermittently.",
+        "status": "Open",
+        "created": "2024-04-14T12:45:00Z",
+        "fileName": "file_148.pdf"
+    },
+    {
+        "staffId": 2,
+        "ticketId": 149,
+        "user": "bob",
+        "issue": "other",
+        "description": "Need headphones with mic for Zoom calls.",
+        "status": "Open",
+        "created": "2024-04-13T11:30:00Z",
+        "fileName": "file_149.pdf"
     }
 ]
+  

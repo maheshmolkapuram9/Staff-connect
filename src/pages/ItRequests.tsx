@@ -7,8 +7,9 @@ import InputFileElement from "../utils/inputs/InputFileElement";
 import ConfirmationPopUp from "../utils/ConfirmationPopUp";
 import assets from "../utils/assets";
 import { ticketType } from "../store/tickets/dataTypes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTicket } from "../store/tickets/ticketSlice";
+import { selectUser } from "../store/user/userSlice";
 
 type issuetype =
   | ""
@@ -20,6 +21,8 @@ type issuetype =
 
 const ItRequests = () => {
   const dispatch = useDispatch();
+  const { staffId, name } = useSelector(selectUser);
+
   const [issueType, setissueType] = useState<issuetype>("");
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -58,20 +61,24 @@ const ItRequests = () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     const itRequestPayload: ticketType = {
-      staffId: 1,
+      staffId: staffId,
       ticketId: 100,
-      user: "Mahesh",
+      user: name,
       issue: issueType,
       description: descriptionRef.current?.value
         ? descriptionRef.current?.value
         : "",
       status: "Open",
-      created: "2024-03-28T09:00:00Z",
+      created: new Date().toISOString(),
       fileName: selectedFile?.name ? selectedFile?.name : "",
     };
     dispatch(addTicket(itRequestPayload));
     setLoading(false);
     setShowConfirmation(true);
+    setissueType("");
+    if (descriptionRef.current) {
+      descriptionRef.current.value = "";
+    }
   };
   return (
     <div className="w-full lg:w-[600px] bg-background shadow-2xl mx-auto p-2 lg:p-6 rounded-lg">

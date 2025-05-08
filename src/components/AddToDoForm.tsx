@@ -4,9 +4,10 @@ import DropDown from "../utils/inputs/DropDown";
 import OrangeButton from "../utils/inputs/OrangeButton";
 import assets from "../utils/assets";
 import { toDoType } from "../store/toDoList/dataTypes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToDo, editToDo } from "../store/toDoList/toDoSlice";
 import { useState } from "react";
+import { selectUser } from "../store/user/userSlice";
 
 export type toDoStatus = "" | "Pending" | "Completed";
 
@@ -28,6 +29,7 @@ const AddToDoForm = ({
   onClose,
 }: AddToDoFormProps) => {
   const dispatch = useDispatch();
+  const staffId = useSelector(selectUser).staffId;
   const [title, setTitle] = useState(titleValue);
   const [toDoStatus, setToDoStatus] = useState<toDoStatus>(toDoStatusValue);
   const [toDoId, setToDoId] = useState<number>(toDoIdValue);
@@ -42,7 +44,7 @@ const AddToDoForm = ({
 
     const toDoPayload: toDoType = {
       toDoId: toDoId,
-      staffId: 1,
+      staffId: staffId,
       title: title,
       completed: toDoStatus === "Completed" && true,
     };

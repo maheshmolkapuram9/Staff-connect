@@ -1,13 +1,14 @@
-import { selectStaff } from "../store/staff/staffSlice";
-import ErrorElement from "../utils/inputs/ErrorElement";
-import ShimmerTable from "../utils/shimmer/ShimmerTable";
-import StaffTableRow from "../utils/table/StaffTableRow";
+import { selectStaff } from "../../store/staff/staffSlice";
+import { selectUser } from "../../store/user/userSlice";
+import ErrorElement from "../../utils/inputs/ErrorElement";
+import ShimmerTable from "../../utils/shimmer/ShimmerTable";
+import StaffTableRow from "../../utils/table/StaffTableRow";
 
 import { useSelector } from "react-redux";
 
 const StaffTable = () => {
   const { data: staffDetails, loading, error } = useSelector(selectStaff);
-  const isAdmin = true;
+  const isAdmin = useSelector(selectUser).isAdmin;
 
   if (error) {
     return <ErrorElement error={error} />;

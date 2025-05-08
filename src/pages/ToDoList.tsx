@@ -1,5 +1,5 @@
 import AddToDoForm from "../components/AddToDoForm";
-import ToDoTable from "../components/ToDoTable";
+import ToDoTable from "../components/tables/ToDoTable";
 import TableWrapper from "../utils/table/TableWrapper";
 
 const ToDoList = () => {

@@ -1,4 +1,4 @@
-import TicketsTable from "../components/TicketsTable";
+import TicketsTable from "../components/tables/TicketsTable";
 import TableWrapper from "../utils/table/TableWrapper";
 
 const Tickets = () => {

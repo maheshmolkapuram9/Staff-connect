@@ -1,22 +1,143 @@
 [
     {
-        "staffId": 1,
-        "name": "Alice Johnson",
-        "role": "Frontend Developer",
-        "email": "alice@brrmedia.com",
-        "status": "Active",
-        "lastLogin": "2025-05-05",
-        "driveStorage": "2.4GB",
-        "deviceType": "MacBook Pro"
+      "staffId": 1,
+      "name": "Alice Johnson",
+      "role": "Frontend Developer",
+      "email": "alice@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-05",
+      "driveStorage": "2.4GB",
+      "deviceType": "MacBook Pro"
     },
     {
-        "staffId": 2,
-        "name": "Zishan Shaik",
-        "role": "Full stack Developer",
-        "email": "alice@brrmedia.com",
-        "status": "InActive",
-        "lastLogin": "2025-05-05",
-        "driveStorage": "2.4GB",
-        "deviceType": "MacBook Pro"
+      "staffId": 2,
+      "name": "Bob Smith",
+      "role": "Backend Developer",
+      "email": "bob@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-06",
+      "driveStorage": "3.1GB",
+      "deviceType": "Dell XPS"
+    },
+    {
+      "staffId": 3,
+      "name": "Carol Williams",
+      "role": "UI/UX Designer",
+      "email": "carol@brrmedia.com",
+      "status": "Inactive",
+      "lastLogin": "2025-04-30",
+      "driveStorage": "1.8GB",
+      "deviceType": "iMac"
+    },
+    {
+      "staffId": 4,
+      "name": "David Brown",
+      "role": "Project Manager",
+      "email": "david@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-07",
+      "driveStorage": "2.0GB",
+      "deviceType": "HP EliteBook"
+    },
+    {
+      "staffId": 5,
+      "name": "Emma Davis",
+      "role": "QA Engineer",
+      "email": "emma@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-08",
+      "driveStorage": "2.5GB",
+      "deviceType": "Lenovo ThinkPad"
+    },
+    {
+      "staffId": 6,
+      "name": "Frank Miller",
+      "role": "DevOps Engineer",
+      "email": "frank@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-06",
+      "driveStorage": "3.0GB",
+      "deviceType": "MacBook Air"
+    },
+    {
+      "staffId": 7,
+      "name": "Grace Lee",
+      "role": "Data Analyst",
+      "email": "grace@brrmedia.com",
+      "status": "Inactive",
+      "lastLogin": "2025-04-28",
+      "driveStorage": "1.2GB",
+      "deviceType": "Surface Pro"
+    },
+    {
+      "staffId": 8,
+      "name": "Henry Wilson",
+      "role": "Content Writer",
+      "email": "henry@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-07",
+      "driveStorage": "2.3GB",
+      "deviceType": "iPad Pro"
+    },
+    {
+      "staffId": 9,
+      "name": "Isabella Martinez",
+      "role": "SEO Specialist",
+      "email": "isabella@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-05",
+      "driveStorage": "2.7GB",
+      "deviceType": "MacBook Pro"
+    },
+    {
+      "staffId": 10,
+      "name": "Jack Taylor",
+      "role": "Marketing Manager",
+      "email": "jack@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-06",
+      "driveStorage": "3.2GB",
+      "deviceType": "Dell Latitude"
+    },
+    {
+      "staffId": 11,
+      "name": "Karen Anderson",
+      "role": "HR Manager",
+      "email": "karen@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-08",
+      "driveStorage": "1.9GB",
+      "deviceType": "HP Spectre"
+    },
+    {
+      "staffId": 12,
+      "name": "Liam Thomas",
+      "role": "Business Analyst",
+      "email": "liam@brrmedia.com",
+      "status": "Inactive",
+      "lastLogin": "2025-04-29",
+      "driveStorage": "2.1GB",
+      "deviceType": "Lenovo Yoga"
+    },
+    {
+      "staffId": 13,
+      "name": "Mia Harris",
+      "role": "Graphic Designer",
+      "email": "mia@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-07",
+      "driveStorage": "2.8GB",
+      "deviceType": "iMac"
+    },
+    {
+      "staffId": 14,
+      "name": "Noah Clark",
+      "role": "Software Engineer",
+      "email": "noah@brrmedia.com",
+      "status": "Active",
+      "lastLogin": "2025-05-06",
+      "driveStorage": "3.5GB",
+      "deviceType": "MacBook Pro"
     }
 ]
+  

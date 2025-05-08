@@ -1,26 +1,125 @@
 [
     {
-        "toDoId":1,
-        "staffId": 1,
-        "title": "Update Chrome",
-        "completed" : false
+      "toDoId": 1,
+      "staffId": 1,
+      "title": "Update Chrome",
+      "completed": false
     },
     {
-        "toDoId":2,
-        "staffId": 1,
-        "title": "Update Windows",
-        "completed" : true
+      "toDoId": 2,
+      "staffId": 2,
+      "title": "Clean desktop folders",
+      "completed": true
     },
     {
-        "toDoId":3,
-        "staffId": 1,
-        "title": "Send a confirmation email to the client",
-        "completed" : true
+      "toDoId": 3,
+      "staffId": 3,
+      "title": "Change Slack status",
+      "completed": false
     },
     {
-        "toDoId":4,
+      "toDoId": 4,
+      "staffId": 1,
+      "title": "Restart router",
+      "completed": true
+    },
+    {
+      "toDoId": 5,
+      "staffId": 2,
+      "title": "Backup local files",
+      "completed": false
+    },
+    {
+      "toDoId": 6,
+      "staffId": 3,
+      "title": "Update Zoom client",
+      "completed": true
+    },
+    {
+      "toDoId": 7,
+      "staffId": 1,
+      "title": "Install security patch",
+      "completed": false
+    },
+    {
+      "toDoId": 8,
+      "staffId": 2,
+      "title": "Reorganize project folders",
+      "completed": true
+    },
+    {
+      "toDoId": 9,
+      "staffId": 3,
+      "title": "Check email filters",
+      "completed": false
+    },
+    {
+      "toDoId": 10,
+      "staffId": 1,
+      "title": "Submit timesheet",
+      "completed": true
+    },
+    {
+        "toDoId": 11,
+        "staffId": 2,
+        "title": "Update system firmware",
+        "completed": false
+    },
+    {
+        "toDoId": 12,
+        "staffId": 3,
+        "title": "Review project documentation",
+        "completed": true
+    },
+    {
+        "toDoId": 13,
         "staffId": 1,
-        "title": "plan interviews",
-        "completed" : false
+        "title": "Organize bookmarks",
+        "completed": false
+    },
+    {
+        "toDoId": 14,
+        "staffId": 2,
+        "title": "Change email password",
+        "completed": true
+    },
+    {
+        "toDoId": 15,
+        "staffId": 3,
+        "title": "Install VSCode extensions",
+        "completed": false
+    },
+    {
+        "toDoId": 16,
+        "staffId": 1,
+        "title": "Clean temporary files",
+        "completed": true
+    },
+    {
+        "toDoId": 17,
+        "staffId": 2,
+        "title": "Update profile picture",
+        "completed": false
+    },
+    {
+        "toDoId": 18,
+        "staffId": 3,
+        "title": "Archive old chats",
+        "completed": true
+    },
+    {
+        "toDoId": 19,
+        "staffId": 1,
+        "title": "Reconnect printer",
+        "completed": false
+    },
+    {
+        "toDoId": 20,
+        "staffId": 2,
+        "title": "Enable dark mode",
+        "completed": true
     }
-]
+
+      
+  ]
+  

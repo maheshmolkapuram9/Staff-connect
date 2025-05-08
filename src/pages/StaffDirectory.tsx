@@ -1,4 +1,4 @@
-import StaffTable from "../components/StaffTable";
+import StaffTable from "../components/tables/StaffTable";
 import TableWrapper from "../utils/table/TableWrapper";
 
 const StaffDirectory = () => {

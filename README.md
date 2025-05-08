@@ -40,20 +40,21 @@ npm run test
 ```text
 staff-connect/
 ├── public/
+│ └── mocks/ # Mock data
 ├── src/
 │ ├── assets/ # Static assets like images, icons, logos, etc.
 │ ├── components/ # Reusable UI components
 │ ├── hooks/ # Custom React hooks
-│ ├── mocks/ # Mock data and API handlers for testing or development
 │ ├── pages/ # Top-level pages (Dashboard, Staff Directory, etc.)
-│ ├── store/ # Global state management logic (e.g., Zustand/Redux)
-│ ├── tests/ # Unit and integration tests
+│ ├── store/ # Global state management logic (Redux toolkit)
+│ ├── tests/ # Unit tests
 │ ├── utils/ # Utility/helper functions
 │ ├── App.tsx # Main component handling routes
 │ ├── main.tsx # Entry point for the React application
 │ └── index.css # Global styles and Tailwind base config
 ├── vite.config.ts # Vite configuration
 └── README.md
+
 ```
 
 # WorkFlow:
@@ -122,6 +123,49 @@ staff-connect/
   -- IT requests form simulated with async, await and setTimeout during submission.
   -- IT request form is validated and handled loading state and errors
 
+- userSlice created to  handle the userSate (either admin or user)
+  -- implemented a feature in staffDirectory, admin can see extra information (last login, Drive
+storage, device status) for each user.
+  -- implemented a feature in header to toggle between user1, user 2 and Admin (user 3)
+  -- implemented a feature to see the number of Open tickets and Pending tasks, updates dynamically (unique data for every user).
+  -- showing tickets table & to-do list table in the dashboard
+  -- dynamically showing the user name in the dashboard banner
 
+- Tickets and To-Dos are personalised acoording to the user.
+  -- every user can only see their tickets and toDos.
+  -- every user get the data of open tickets, pending tasks, recent updates from their own data.
+  -- added brr media fevicon
+  -- more mock data is updated to see the data
+```
 
+# Features:
+
+```text
+--Added a feature to switch between different users (User1, User2, Admin) to test roles
+--Simulated async data fetching from JSON using setTimeout
+--Simulated adding/editing todos and tickets asynchronously
+--developed a feature to mark it as completed or not, edit and delete ToDos
+--Handled loading states during data fetch and form submissions
+--Added form validation for better input handling
+--Displayed error messages and feedback in the UI for better user experience
+--Used React Router for navigation between pages
+--Created a custom error page for unmatched routes
+--Used Redux Toolkit for centralized state management and clean project structure
+--Used latest versions of React, Redux Toolkit, Tailwind, etc., for better performance and future scaling
+--Dynamically displayed open tickets, pending tasks, and updates
+--Stored data in local storage to keep updates even after refresh (no backend yet)
+--Designed a clean and brand-aligned UI
+--Made the UI responsive for mobile, tablet, and desktop screens
+--Added accessibility features for better usability by everyone
+--Used TypeScript for better type safety and scalability
+--Structured the project for easy understanding and collaboration
+--Used reusable components and higher-order components
+--Implemented unit testing to ensure code quality
+
+```
+
+# Assumptions:
+
+```text
+- updates are considered as the no.of tickets from today.
 ```

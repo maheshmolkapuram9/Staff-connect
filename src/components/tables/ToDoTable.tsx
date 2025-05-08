@@ -1,19 +1,21 @@
-import { useState } from "react";
-import assets from "../utils/assets";
-import EditImage from "../utils/table/EditImage";
-import ToDoDone from "../utils/table/ToDoDone";
-import ToDoTableRow from "../utils/table/ToDoTableRow";
-import ConfirmationPopUp from "../utils/ConfirmationPopUp";
-import AddToDoForm, { toDoStatus } from "./AddToDoForm";
-import ClosingCross from "../utils/ClosingCross";
+import { useEffect, useState } from "react";
+import assets from "../../utils/assets";
+import EditImage from "../../utils/table/EditImage";
+import ToDoDone from "../../utils/table/ToDoDone";
+import ToDoTableRow from "../../utils/table/ToDoTableRow";
+import ConfirmationPopUp from "../../utils/ConfirmationPopUp";
+import AddToDoForm, { toDoStatus } from "../AddToDoForm";
+import ClosingCross from "../../utils/ClosingCross";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeToDoStatus,
   deleteToDo,
   selectToDo,
-} from "../store/toDoList/toDoSlice";
-import ShimmerTable from "../utils/shimmer/ShimmerTable";
-import ErrorElement from "../utils/inputs/ErrorElement";
+  setUserToDoList,
+} from "../../store/toDoList/toDoSlice";
+import ShimmerTable from "../../utils/shimmer/ShimmerTable";
+import ErrorElement from "../../utils/inputs/ErrorElement";
+import { selectUser } from "../../store/user/userSlice";
 
 interface deleteType {
   state: boolean;
@@ -22,6 +24,12 @@ interface deleteType {
 
 const ToDoTable = () => {
   const dispatch = useDispatch();
+  const {
+    data: { toDos: toDoList, userToDos },
+    loading,
+    error,
+  } = useSelector(selectToDo);
+  const staffId = useSelector(selectUser).staffId;
   const [showEditToDoItem, setShowEditToDoItem] = useState<boolean>(false);
   const [toDoIdValue, setToDoIdValue] = useState<number>(1);
   const [showDeleteConfirmation, setShowDeleteConfirmation] =
@@ -31,7 +39,16 @@ const ToDoTable = () => {
     });
   const [title, setTitle] = useState<string>("Update value");
   const [toDoStatus, setToDoStatus] = useState<toDoStatus>("Pending");
-  const { data: toDoList, loading, error } = useSelector(selectToDo);
+
+  useEffect(() => {
+    if (toDoList && staffId) {
+      const filtered = toDoList.filter(
+        (eachToDo) => eachToDo.staffId === staffId,
+      );
+      dispatch(setUserToDoList(filtered));
+    }
+  }, [toDoList, staffId, dispatch]);
+
   if (error) {
     return <ErrorElement error={error} />;
   }
@@ -48,8 +65,8 @@ const ToDoTable = () => {
           />
         </thead>
         <tbody>
-          {toDoList &&
-            toDoList.map((eachToDo) => (
+          {userToDos &&
+            userToDos.map((eachToDo) => (
               <ToDoTableRow
                 key={eachToDo.toDoId}
                 title={eachToDo.title}
