@@ -13,6 +13,7 @@ const EditImage = ({ image, className, onClick }: EditImageProps) => {
         className
       }
       src={image}
+      alt="Edit icon svg"
     />
   );
 };

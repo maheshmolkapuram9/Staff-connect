@@ -109,6 +109,7 @@ const AddToDoForm = ({
             ? {
                 loadingElement: (
                   <img
+                    loading="lazy"
                     className="w-7 h-7 animate-spin"
                     src={assets.loader}
                     alt="loading spinner"

@@ -14,7 +14,9 @@ const ToDoDone = ({ done, onClick }: ToDoDoneProps) => {
         (done && "bg-text-primary border-0")
       }
     >
-      {done && <img className="w-[80%]" src={assets.correct} />}
+      {done && (
+        <img className="w-[80%]" src={assets.correct} alt="tick icon svg" />
+      )}
     </div>
   );
 };

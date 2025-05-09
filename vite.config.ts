@@ -10,6 +10,7 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
+    include: ["src/tests/**/*.test.tsx"],
     // 👇 disable coverage temporarily
     coverage: {
       enabled: false,

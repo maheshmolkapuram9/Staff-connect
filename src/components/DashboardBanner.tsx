@@ -8,6 +8,7 @@ const DashboardBanner = () => {
     <div className="py-6 lg:py-10">
       <div className="relative width-full ">
         <img
+          loading="lazy"
           className="w-full h-full object-cover rounded-4xl aspect-video lg:aspect-auto md:h-[400px] lg:h-[500px] 2xl:h-[600px]"
           src={assets.banner}
           alt="dashbiard banner img"

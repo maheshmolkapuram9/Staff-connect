@@ -24,7 +24,7 @@
       "name": "Carol Williams",
       "role": "UI/UX Designer",
       "email": "carol@brrmedia.com",
-      "status": "Inactive",
+      "status": "InActive",
       "lastLogin": "2025-04-30",
       "driveStorage": "1.8GB",
       "deviceType": "iMac"
@@ -64,7 +64,7 @@
       "name": "Grace Lee",
       "role": "Data Analyst",
       "email": "grace@brrmedia.com",
-      "status": "Inactive",
+      "status": "InActive",
       "lastLogin": "2025-04-28",
       "driveStorage": "1.2GB",
       "deviceType": "Surface Pro"
@@ -114,7 +114,7 @@
       "name": "Liam Thomas",
       "role": "Business Analyst",
       "email": "liam@brrmedia.com",
-      "status": "Inactive",
+      "status": "InActive",
       "lastLogin": "2025-04-29",
       "driveStorage": "2.1GB",
       "deviceType": "Lenovo Yoga"
