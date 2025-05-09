@@ -9,6 +9,7 @@ A modern internal tool built with **React + Vite** for managing staff informatio
 - **Frontend:** React + TypeScript (via Vite)
 - **Styling:** Tailwind CSS
 - **Routing:** React Router
+- **State management:** Redux toolkit
 - **Testing:** Vitest, React Testing Library, jsdom
 
 ---
